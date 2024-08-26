@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QuickHire - Find Work or Worker</title>
+    <style>
+      /* CSS styles for QuickHire website */
+
+      /* Reset default styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        height: 100vh;
+        background-image: url("bg.avif");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 60px;
+      }
+
+      /* Header styles */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 0px 0px 23px 23px;
+        box-shadow: 0 0 1px rgb(29, 26, 26);
+        background-image: url("bg.avif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 999;
+        height: 8%;
+        transition: height 0.3s ease;
+      }
+
+      .logo img {
+        width: 240px;
+        height: auto;
+        margin-left: 20px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #007bff;
+      }
+
+      .user-actions button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-left: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .user-actions button:hover {
+        background-color: #0056b3;
+      }
+
+      #home .Home {
+        display: flex;
+        margin-top: 5px;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        text-align: center; /* Center-align the content */
+      }
+
+      #home .text {
+        flex: 1.8; /* Adjust the text width */
+        padding: 0 20px; /* Add some padding */
+      }
+
+      #home .text h1 {
+        font-size: 2.8em; /* Slightly reduce the font size */
+        margin-bottom: 15px; /* Increase the bottom margin */
+      }
+
+      #home .text h5 {
+        font-size: 1.5em; /* Adjust the font size */
+        font-weight: normal; /* Use normal weight for better readability */
+        line-height: 1.6; /* Increase line height for better readability */
+      }
+
+      #home .image {
+        flex: 1; /* Allow the image to take remaining space */
+        text-align: center;
+      }
+
+      #home .image img {
+        max-width: 95%; /* Adjust the width to fit the container */
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+      .s {
+        margin-left: 0px;
+        margin-right: 50px;
+      }
+
+      /* Sections for internal navigation */
+      section {
+        padding: 40px;
+        scroll-behavior: smooth;
+        background-color: #f0f0f0;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh; /* Set the height to match home section */
+      }
+
+      section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      section .content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: justify;
+        line-height: 1.4;
+      }
+
+      section p {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+      }
+
+      /* Adjusted section styles */
+      section:nth-child(even) {
+        background-color: #e8e8e8;
+      }
+
+      section:nth-child(odd) {
+        background-color: #f0f0f0;
+      }
+
+      section img {
+        margin-top: 30px;
+        max-width: 20%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Other styles can remain the same */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="white.png" alt="Logo" />
+      </div>
+      <div class="q">
+        <nav class="quick-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#help">Help</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="s">
+        <div class="user-actions">
+          <button class="login-btn" onclick="redirectToSignIn()">Login</button>
+          <button class="signup-btn" onclick="redirectToSignUp()">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sections for internal navigation -->
+    <section id="home">
+      <div class="Home">
+        <div class="text">
+          <h1>Quickest platform to<br />find work or worker🔍</h1>
+          <h5>
+            QuickHire is a platform where a client can find a worker<br />
+            based on work within a 20-25 km radius from the posting.
+          </h5>
+        </div>
+        <div class="image">
+          <img src="p1.png" alt="Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="content">
+        <p>
+          <!-- Your about section content -->
+          By narrowing the recruitment radius to 15-20 kilometers, organizations
+          can leverage the advantages of a local workforce. This approach
+          minimizes commute times, enhances work-life balance, and contributes
+          to a more sustainable and environmentally friendly employment model.
+          The localized hiring strategy provides an opportunity to embrace and
+          celebrate diversity within the community. Organizations can implement
+          inclusive practices that reflect the varied backgrounds and
+          experiences of the local workforce, thereby fostering a rich and
+          dynamic working environment.
+        </p>
+      </div>
+    </section>
+
+    <section id="help">
+      <h2>Help</h2>
+      <div class="content">
+        <h3>QuickHire Support</h3>
+        <p>
+          At QuickHire, we strive to provide comprehensive assistance to all our
+          users. Here's how we can help:
+        </p>
+        <ul>
+          <li>
+            <strong>Frequently Asked Questions (FAQs):</strong> Find answers to
+            common queries regarding our platform's functionalities, user
+            guidelines, and account management.
+          </li>
+          <li>
+            <strong>Contact Customer Support:</strong> Reach out to our
+            dedicated support team for personalized assistance. We're available
+            via email and phone to address any concerns or technical issues
+            promptly.
+          </li>
+          <li>
+            <strong>Guides and Tutorials:</strong> Access our detailed guides
+            and tutorials to navigate through the platform's features
+            seamlessly. Learn how to create listings, search for jobs, or post
+            work opportunities effectively.
+          </li>
+          <li>
+            <strong>Community Forum:</strong> Engage with fellow users, share
+            insights, and participate in discussions within our community forum.
+            It's a space to connect, exchange ideas, and seek advice.
+          </li>
+          <li>
+            <strong>Feedback and Suggestions:</strong> Your feedback matters!
+            Share your thoughts and suggestions to help us improve our platform
+            and enhance your experience.
+          </li>
+        </ul>
+        <p>
+          For immediate assistance, please check our FAQs or contact our support
+          team.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="content">
+        <!-- Your contact section content -->
+        <h3>Get in Touch</h3>
+        <p>
+          We're here to assist you! Reach out to us through the following
+          channels:
+        </p>
+        <ul>
+          <li>
+            <strong>Email:</strong> For any queries or concerns, drop us an
+            email at
+            <a href="mailto:hariyanagandula@gmail.com"
+              >hariyanagandula@gmail.com</a
+            >
+          </li>
+
+          <li>
+            <strong>Phone:</strong> You can call our support team at
+            +917382118209 during business hours.
+          </li>
+          <li>
+            <strong>Feedback Form:</strong> Use our feedback form on the website
+            to share your thoughts or suggestions directly with us.
+          </li>
+          <li>
+            <strong>Social Media:</strong> Connect with us on social media
+            platforms for updates, announcements, and community engagement.
+          </li>
+          <li>
+            <strong>Visit Us:</strong> You can visit our office at
+            [11-9-829/LB-Nagar/Warangal/Telangana] during office hours for
+            in-person assistance.
+          </li>
+        </ul>
+        <p>
+          We value your input and are committed to providing a seamless
+          experience. Don't hesitate to contact us!
+        </p>
+      </div>
+    </section>
+
+    <script>
+      // Your existing JavaScript code remains unchanged
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+      function redirectToSignIn() {
+        window.location.href = "login.php"; // Redirect to QH.html on Sign In click
+      }
+
+      function redirectToSignUp() {
+        window.location.href = "signup.php"; // Redirect to signup.html on Sign Up click
+      }
+    </script>
+  </body>
+</html>
